@@ -1,0 +1,143 @@
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: darkgreen;
+}
+
+#about {
+  text-align: center;
+}
+
+#selfpic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
+  display: block;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 580px;
+    list-style-type: none;
+    box-shadow: 0 4px 6px #000;
+    border-style: ridge;
+    border-color: dimgrey;
+    border-width: 7px;
+    background-image: url("../assets/particle-flow-transition-background.jpg");
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+  }
+  
+  .item {
+    width: 32%;
+    margin-bottom: 2%; /* (100-32*3)/2 */
+    margin-top: 2%;
+    margin-right:auto;
+    box-shadow: 0 4px 6px #000;
+    border: thin silver solid;
+    background-color: #748b76;
+  }
+  
+  /* Re-order items into rows */
+  .item:nth-child(3n+1) { order: 1; }
+  .item:nth-child(3n+2) { order: 2; }
+  .item:nth-child(3n)   { order: 3; }
+  
+  /* Force new columns */
+  .container::before,
+  .container::after {
+    content: "";
+    flex-basis: 100%;
+    width: 0;
+    order: 2;
+  }
+  .figure {
+    float: right;
+    width: 30%;
+    text-align: center;
+    font-style: italic;
+    font-size: smaller;
+    text-indent: 0;
+    border: thin silver solid;
+    margin: 0.5em;
+    padding: 0.5em;
+    display: table;
+    background-color: #748b76;
+  }
+  #horiseon {
+    float:inline-start;
+    width: 40%;
+    text-align: center;
+    font-style: italic;
+    font-size:medium;
+    text-indent: 0;
+    border: thin silver solid;
+    margin: 0.5em;
+    padding: 0.5em;
+    display: table;
+    background-color: #748b76;
+  }
+  #text {
+    float: left;
+    width: 60%;
+    height: 30%;
+    text-align: center;
+    font-style: italic;
+    font-size: medium;
+    text-indent: 0;
+    margin: 0.5em;
+    margin-top: -25%;
+    padding: 0.5em;
+    display: table;
+    background-color: #748b76;
+  }
+  img.scaled {
+    width: 100%;
+  }
+  figcaption {
+    display: table-caption;
+    caption-side: top;
+    background-color: #748b76;
+    border: thin silver solid;
+  }
+
+@media (max-width: 720px) {
+  #horiseon {
+    display: block;
+    width: 90%;
+    min-width:90%;
+  }
+  .figure {
+    display: block;
+    width: 90%;
+    min-width:90%;
+  }
+  .container {
+    display: block;
+    width: 500px;
+  }
+}
+@media (max-width: 900px) {
+  #horiseon {
+    display: block;
+    width: 70%;
+    min-width:70%;
+  }
+  .figure {
+    display: block;
+    width: 70%;
+    min-width:70%;
+  }
+  .container {
+    display: block;
+    width: 90%;
+  }
+}
